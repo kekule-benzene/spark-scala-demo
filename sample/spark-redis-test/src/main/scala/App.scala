@@ -28,6 +28,8 @@ object App {
 	_sc.toRedisKV(_sc.parallelize(Array( ("b", "678910") )))
 	_sc.toRedisKV(_sc.parallelize(Array( ("lorem", "ipsum sit dolor amet") )))
 
+	_sc.toRedisHASH(_sc.parallelize(Array( ("12345", "ridwanbejo"), ("12341", "wildan"), ("12344", "tajhul") )), "students")
+
 	val stringRDD = _sc.fromRedisKV(Array("foo", "bar", "a", "b", "lorem"))
 	println("Result length:")
 	println(stringRDD.count())
